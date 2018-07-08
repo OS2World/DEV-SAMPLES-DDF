@@ -1,0 +1,34 @@
+# IBM Developer's Workframe/2 Make File Creation run at 17:29:50 on 01/29/94
+
+# Make File Creation run in directory:
+#   D:\PROJ\DDF;
+
+# Assumed INCLUDE environment variable path:
+#   D:\TOOLKT20\CPLUS\OS2H;
+#   D:\TOOLKT20\C\OS2H;
+#   D:\TOOLKT20\ASM\OS2INC;
+#   d:\etk\ETOOLKT\INCLUDE;
+#   D:\IBMCPP\INCLUDE;
+#   D:\IBMCPP\IBMCLASS;
+
+
+INCLUDE001=$(INCLUDE)
+
+INCLUDE000=.
+INCLUDE000=$(INCLUDE000);$(INCLUDE)
+
+
+help.HLP:  help.ipf  \
+   HELP.MAK
+
+help.OBJ:  help.c  \
+   {$(INCLUDE000)}help.h  \
+#    {$(INCLUDE001)}os2.h  \
+   HELP.MAK
+
+helpddf.OBJ:  helpddf.c  \
+#  {$(INCLUDE001)}stdlib.h  \
+#  {$(INCLUDE001)}malloc.h  \
+   {$(INCLUDE000)}help.h  \
+#    {$(INCLUDE001)}os2.h  \
+   HELP.MAK
